@@ -25,8 +25,8 @@ if st.sidebar.button('지역 선택'):
             '중랑구', '동대문구', '광진구', '성동구', '용산구', '중구', '종로구'
         )
     )
-    st.write(location)
-
+ 
+st.write(location)
 if st.sidebar.button('크기 선택'):
     size = st.sidebar.selectbox(
     "크기 선택",
