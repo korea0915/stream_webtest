@@ -16,7 +16,7 @@ with st.sidebar:
         (AI26year[0], AI26year[1], AI26year[2])
     )
 
-if with st.sidebar.button('지역 선택'):
+if st.sidebar.button('지역 선택'):
     location = st.sidebar.selectbox(
     "지역 선택",
         (
@@ -27,7 +27,7 @@ if with st.sidebar.button('지역 선택'):
     )
     st.write(location)
 
-if with st.sidebar.button('크기 선택'):
+if st.sidebar.button('크기 선택'):
     size = st.sidebar.selectbox(
     "크기 선택",
         (
