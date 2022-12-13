@@ -25,6 +25,7 @@ if st.sidebar.button('지역 선택'):
             '중랑구', '동대문구', '광진구', '성동구', '용산구', '중구', '종로구'
         )
     )
+    with st.sidebar.button('지역 선택')
     st.write(location)
 
 if st.sidebar.button('크기 선택'):
