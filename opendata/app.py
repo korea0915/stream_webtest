@@ -26,7 +26,6 @@ with st.sidebar:
                 '중랑구', '동대문구', '광진구', '성동구', '용산구', '중구', '종로구'
             )
         )
-    temp1 = location
     
 
 with st.sidebar:
