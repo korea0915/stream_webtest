@@ -4,4 +4,6 @@ import pandas as pd
 import matplotlib as plt
 import seaborn as sns
 
-st.write("hello")
+titanic = sns.load_dataset("titanic")
+
+st.write(titanic)
