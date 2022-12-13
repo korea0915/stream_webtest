@@ -13,13 +13,13 @@ with st.sidebar:
         (AI26year[0], AI26year[1], AI26year[2])
     )
 
-
+st.write(year)
 location = st.sidebar.selectbox(
     "지역 선택",
     ("서울", "인천", "등등")
 )
 
-
+st.write(location)
 tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])
 data = np.random.randn(10, 1)
 
