@@ -16,8 +16,8 @@ with st.sidebar:
         (AI26year[0], AI26year[1], AI26year[2])
     )
 
-if st.sidebar.button('지역 선택'):
-    location = with st.sidebar.selectbox(
+if with st.sidebar.button('지역 선택'):
+    location = st.sidebar.selectbox(
     "지역 선택",
         (
             '강동구', '송파구', '강남구', '서초구', '관악구', '동작구', '영등포구', '금천구', '구로구',
@@ -27,8 +27,8 @@ if st.sidebar.button('지역 선택'):
     )
     st.write(location)
 
-if st.sidebar.button('크기 선택'):
-    size = with st.sidebar.selectbox(
+if with st.sidebar.button('크기 선택'):
+    size = st.sidebar.selectbox(
     "크기 선택",
         (
             '소형', '중소형', '중형', '중대형', '대형'
