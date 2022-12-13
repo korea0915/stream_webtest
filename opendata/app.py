@@ -8,13 +8,13 @@ AI26location = ['강동구', '송파구', '강남구', '서초구', '관악구',
                 '중랑구', '동대문구', '광진구', '성동구', '용산구', '중구', '종로구']
 # Using "with" notation
 with st.sidebar:
-    add_radio = st.radio(
+    year = st.radio(
         "원하시는 년도를 선택해 주세요",
         (AI26year[0], AI26year[1], AI26year[2])
     )
 
 
-add_selectbox = st.sidebar.selectbox(
+location = st.sidebar.selectbox(
     "지역 선택",
     ("서울", "인천", "등등")
 )
