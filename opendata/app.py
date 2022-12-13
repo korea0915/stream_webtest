@@ -18,7 +18,7 @@ with st.sidebar:
 with st.sidebar:
     if st.sidebar.button('지역 선택'):
         with st.sidebar:
-            location = st.sidebar.selectbox(
+            location = st.selectbox(
             "지역 선택",
                 (
                     '강동구', '송파구', '강남구', '서초구', '관악구', '동작구', '영등포구', '금천구', '구로구',
