@@ -9,3 +9,5 @@ titanic = sns.load_dataset("titanic")
 st.write(titanic)
 st.write(titanic.info())
 fig = plt.figure(figsize=(10,4))
+##보여줄 차트내용
+st.pyplot(fig)
