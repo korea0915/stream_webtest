@@ -2,12 +2,12 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-
+AI26year = [2018,2019,2020]
 # Using "with" notation
 with st.sidebar:
     add_radio = st.radio(
-        "Choose a shipping method",
-        ("Standard (5-15 days)", "Express (2-5 days)")
+        "원하시는 년도를 선택해 주세요",
+        (AI26year[0], AI26year[1], AI26year[2])
     )
 
 
