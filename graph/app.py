@@ -7,3 +7,4 @@ import seaborn as sns
 titanic = sns.load_dataset("titanic")
 
 st.write(titanic)
+st.write(titanic.info)
