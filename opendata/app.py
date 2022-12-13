@@ -290,20 +290,3 @@ if __name__ == '__main__':
 
     main(df)
 
-
-# https://discuss.streamlit.io/t/values-slider/9434 streamlit sharing has a temp bug that sliders only show the top value
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-galaxy-poster/gz_decals_mike_walmsley.py at master · mwalmsley/galaxy-poster
