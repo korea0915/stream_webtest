@@ -9,7 +9,7 @@ st.write(
     * 테스트 입니다.
     """
 )
-
+st.button('Click me')
 ##이미지 표시
 st.image(
     "https://imagescdn.gettyimagesbank.com/500/201607/a10518606.jpg"
