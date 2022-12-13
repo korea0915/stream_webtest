@@ -17,7 +17,7 @@ with st.sidebar:
     )
 with st.sidebar:
     if st.sidebar.button('지역 선택'):
-        st.write(temp1)
+        location.label_visibility = "hidden"
     location = st.selectbox(
             "지역 선택",
             (
