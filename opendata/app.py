@@ -23,3 +23,11 @@ tab1.line_chart(data)
 
 tab2.subheader("A tab with the data")
 tab2.write(data)
+
+with st.expander("결론"):
+    st.write("""
+        The chart above shows some numbers I picked for you.
+        I rolled actual dice for these, so they're *guaranteed* to
+        be random.
+    """)
+    st.image("https://static.streamlit.io/examples/dice.jpg")
