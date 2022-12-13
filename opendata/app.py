@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 AI26year = [2018,2019,2020]
 AI26location = ['강동구', '송파구', '강남구', '서초구', '관악구', '동작구', '영등포구', '금천구', '구로구',
                 '강서구', '양천구', '마포구', '서대문구', '은평구', '노원구', '도봉구', '강북구', '성북구',
-       '         중랑구', '동대문구', '광진구', '성동구', '용산구', '중구', '종로구']
+                '중랑구', '동대문구', '광진구', '성동구', '용산구', '중구', '종로구']
 # Using "with" notation
 with st.sidebar:
     add_radio = st.radio(
@@ -18,7 +18,7 @@ add_selectbox = st.sidebar.selectbox(
     "지역 선택",
     (
         for x in AI26location:
-            return x        
+            st.write(x)     
     )
 )
 
