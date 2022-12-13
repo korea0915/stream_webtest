@@ -3,17 +3,19 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-add_selectbox = st.sidebar.selectbox(
-    "지역 선택",
-    ("서울", "인천", "등등")
-)
-
 # Using "with" notation
 with st.sidebar:
     add_radio = st.radio(
         "Choose a shipping method",
         ("Standard (5-15 days)", "Express (2-5 days)")
     )
+
+
+add_selectbox = st.sidebar.selectbox(
+    "지역 선택",
+    ("서울", "인천", "등등")
+)
+
 
 tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])
 data = np.random.randn(10, 1)
