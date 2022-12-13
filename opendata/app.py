@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-temp1 = ""
+
 temp2 = ""
 AI26year = [2018,2019,2020]
 AI26location = ['강동구', '송파구', '강남구', '서초구', '관악구', '동작구', '영등포구', '금천구', '구로구',
@@ -16,7 +16,7 @@ with st.sidebar:
         (AI26year[0], AI26year[1], AI26year[2])
     )
 if st.sidebar.button('지역 선택'):
-    global temp1
+    global temp1 = ""
     location = st.sidebar.selectbox(
     "지역 선택",
         (
