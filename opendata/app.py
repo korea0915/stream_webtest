@@ -15,7 +15,7 @@ with st.sidebar:
         "원하시는 년도를 선택해 주세요",
         (AI26year[0], AI26year[1], AI26year[2])
     )
-st.sidebar.button('지역 선택')
+
 if st.sidebar.button('지역 선택'):
     location = st.sidebar.selectbox(
     "지역 선택",
@@ -25,6 +25,7 @@ if st.sidebar.button('지역 선택'):
             '중랑구', '동대문구', '광진구', '성동구', '용산구', '중구', '종로구'
         )
     )
+    st.sidebar.button('지역 선택')
     st.write(location)
 
 if st.sidebar.button('크기 선택'):
