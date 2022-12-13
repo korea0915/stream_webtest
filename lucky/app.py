@@ -10,5 +10,5 @@ for idx,col in enumerate(colums):
         col.text_input
         (
             f"조 추첨 대상 {idx+1 +idx2*4}", 
-            key=f"{idx+1+idx2*4}"
+            key=f"n{idx+1+idx2*4}"
         )
