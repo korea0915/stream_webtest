@@ -17,7 +17,6 @@ with st.sidebar:
     )
 with st.sidebar:
     if st.sidebar.button('지역 선택'):
-        with st.sidebar:
             location = st.selectbox(
             "지역 선택",
                 (
