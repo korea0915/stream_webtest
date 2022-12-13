@@ -16,6 +16,7 @@ with st.sidebar:
         (AI26year[0], AI26year[1], AI26year[2])
     )
 if st.sidebar.button('지역 선택'):
+    global temp1
     location = st.sidebar.selectbox(
     "지역 선택",
         (
