@@ -62,7 +62,7 @@ g_data = ss2[g_idx]
 # 13개의 짝을 지어서 표시해줄 그래픽
 
 n_rd = np.random.choice(n_data, len(n_data), replace=False)
-g_rd = np.random.choice(n_data, len(g_data), replace=False)
+g_rd = np.random.choice(g_data, len(g_data), replace=False)
 
 df = pd.DataFrame({"추첨 대상자 이름": n_rd,"조 이름": g_rd})
 
