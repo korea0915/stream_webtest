@@ -14,7 +14,7 @@ st.header("여러분의 참여를 환영합니다!")
 # x = st.columns(n) : n만큼의 컬럼 리스트를 생성
 
 
-tabs = st.tabs(['참가자'])
+tabs = st.tabs(['참가자','조'])
 columns = tabs[0].columns(4) # 화면을 열로 나누어서 배치
 # 가로 4개의 열 -> columns = [col1, col2, col3, col4]
 # col1, col2, col3, col4
@@ -32,7 +32,6 @@ for idx, col in enumerate(columns): # 열의 위치
 # 13명이 소속될 조 이름을 넣을 위치
 
 
-tabs = st.tabs(['조'])
 columns2 = tabs[1].columns(4) # 화면을 열로 나누어서 배치
 # 가로 4개의 열 -> columns = [col1, col2, col3, col4]
 # col1, col2, col3, col4
