@@ -16,10 +16,7 @@ with st.sidebar:
 
 add_selectbox = st.sidebar.selectbox(
     "지역 선택",
-    (
-        for x in AI26location:
-            st.write(x)     
-    )
+    ("서울", "인천", "등등")
 )
 
 
