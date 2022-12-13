@@ -15,7 +15,7 @@ with st.sidebar:
         "원하시는 년도를 선택해 주세요",
         (AI26year[0], AI26year[1], AI26year[2])
     )
-st.sidebar.button('지역 선택', on_click (showdata())):
+st.sidebar.button('지역 선택', on_click (showdata()):
     # location = st.sidebar.selectbox(
     # "지역 선택",
     #     (
