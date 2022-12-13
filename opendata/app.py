@@ -23,6 +23,7 @@ if st.sidebar.button('지역 선택'):
             '중랑구', '동대문구', '광진구', '성동구', '용산구', '중구', '종로구'
         )
     )
+st.write(location)
 if st.sidebar.button('크기 선택'):
     size = st.sidebar.selectbox(
     "크기 선택",
@@ -30,7 +31,7 @@ if st.sidebar.button('크기 선택'):
             '소형', '중소형', '중형', '중대형', '대형'
         )
     )
-
+st.write(size)
 
 
 tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])
