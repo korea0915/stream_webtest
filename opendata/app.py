@@ -38,8 +38,7 @@ with st.sidebar:
                 '소형', '중소형', '중형', '중대형', '대형'
             )
         )
-        temp2 = size
-    st.write(temp2)
+
 
 tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])
 data = np.random.randn(10, 1)
