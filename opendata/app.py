@@ -47,10 +47,10 @@ df = pd.read_csv(f'./opendata/data/df_{year}.csv') #선택한 년도 데이터 �
 tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])          #탭으로 그래프로 볼지 데이터 프레임으로 볼지 선택
 data = np.random.randn(10, 1)                          #데이터 입력
  
-tab1.subheader("A tab with a chart")                    #탭 1 헤더
+tab1.subheader(f"{year}년도 {location}지역 매매 현황 그래프")                    #탭 1 헤더
 tab1.line_chart(data)                                   #탭 1 그래프 출력
 
-tab2.subheader("A tab with the data")                   #탭 2 헤더
+tab2.subheader(f"{year}년도 {location}지역 매매 현황 데이터")                   #탭 2 헤더
 tab2.write(df)                                        #탭 2 데이터 출력
 
 with st.expander("결론"):                                #결론 출력(최곳값, 최솟값 등등)
