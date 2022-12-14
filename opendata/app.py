@@ -77,8 +77,8 @@ def max_min(location, size):                                  #결론 부분의 
                     ### {year}년 {location}지역의 아파트 매매 현황
                     - {location}지역의 최고 매매가 : {maxv}원
                     - {location}지역의 최저 매매가 : {minv}원
-                    - {location}지역의 가장 인기있는 사이즈 : {maxc}
-                    - {location}지역의 가장 인기없는 사이즈 : {minc}
+                    - {location}지역의 가장 인기있는 사이즈 : {maxc[:4]}
+                    - {location}지역의 가장 인기없는 사이즈 : {minc[:4]}
                 """)
     else:
         st.write("보여드릴게 없습니다.")
