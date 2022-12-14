@@ -54,9 +54,10 @@ tab2.subheader(f"{year}년도 {location}지역 매매 현황 데이터")        
 tab2.write(df)                                        #탭 2 데이터 출력
 
 with st.expander("결론"):                                #결론 출력(최곳값, 최솟값 등등)
-    st.write("""
-        The chart above shows some numbers I picked for you.
-        I rolled actual dice for these, so they're *guaranteed* to
-        be random.
+    st.write(f"""
+                최고 매매가: max값
+                최소 매매가: min값
+        최고 많이 팔린 크기:  max값
+        제일 적게 팔린 크기:  min값
     """)
-    st.image("https://static.streamlit.io/examples/dice.jpg")
+    st.image("./opendata/img/exit.png")
