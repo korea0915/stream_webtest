@@ -2,6 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 ## 함수관련
 def draw_plot(df, location = '지역선택', size = '크기선택'):
