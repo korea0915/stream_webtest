@@ -6,7 +6,7 @@ import seaborn as sns
 
 ## 함수관련
 def draw_plot(df, location = '지역선택', size = '크기선택'):
-    if location == '지역선택' & size == '크기선택':
+    if (location == '지역선택') & (size == '크기선택'):
         st.write('선택좀')
     elif location == '지역선택':
         # 크기 선택, 구별 확인
