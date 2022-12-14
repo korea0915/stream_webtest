@@ -59,27 +59,27 @@ def max_min(location, size):
         mini = data[f"{size} 거래금액"].idxmin()      #최소 매매가 지역
         maxc = data[f"{size} 거래건수"].idxmax()      #거래가 가장 많이 된 곳
         minc = data[f"{size} 거래건수"].idxmin()      #거래가 가장 적게 된 곳
-        st.write(f"
+        st.write(f"""
                   ** {year} 서울 아파트 매매 거래현황
                     - 제일 인기 있는 지역: {maxc}
                     - 제일 인기 없는 지역: {minc}
 
                     - 최고 매매가: {maxi}지역의 {maxv}원
                     - 최소 매매가: {mini}지역의 {minv}원     
-                ")
+                """)
 
     elif (location != "지역선택") & (size == "크기선택"):
         maxv = data.loc[f"{location}", "소형 거래금액":].max()  #최고 매매가
         maxc = data.loc[f"{location}", :"대형 거래건수"].max()  #인기 있는 사이즈
         minv = data.loc[f"{location}", "소형 거래금액":].min()  #최소 매매가
         minc = data.loc[f"{location}", :"대형 거래건수"].min()  #인기 없는 사이즈
-        st.write(f"
+        st.write(f"""
                     ** {year}년 {location}지역의 아파트 매매 현황
                     - {location}지역의 최고 매매가: {maxv}
                     - {location}지역의 최저 매매가: {minv}
                     - {location}지역의 가장 인기있는 사이즈: {maxc}
                     - {location}지역의 가장 인기없는 사이즈: {minc}
-                ")
+                """)
     else:
         st.write("보여드릴게 없습니다.")
 
