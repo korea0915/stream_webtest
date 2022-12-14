@@ -8,7 +8,7 @@ import plotly.express as px
 ## 함수관련
 def draw_plot(df, location = '지역선택', size = '크기선택'):
     if (location == '지역선택') & (size == '크기선택'):
-        st.image("./apt/sample.jpg")
+        st.image("./opendata/img/sample.jpg")
     elif location == '지역선택':
         # 크기 선택, 구별 확인
         data = df[['자치구 명',f'{size} 거래건수', f'{size} 거래금액']]
