@@ -75,8 +75,8 @@ def max_min(location, size):                                  #결론 부분의 
         minc = data.loc[f"{location}", :"대형 거래건수"].min()  #인기 없는 사이즈
         st.write(f"""
                     ### {year}년 {location}지역의 아파트 매매 현황
-                    - {location}지역의 최고 매매가 : {maxv}
-                    - {location}지역의 최저 매매가 : {minv}
+                    - {location}지역의 최고 매매가 : {maxv}원
+                    - {location}지역의 최저 매매가 : {minv}원
                     - {location}지역의 가장 인기있는 사이즈 : {maxc}
                     - {location}지역의 가장 인기없는 사이즈 : {minc}
                 """)
