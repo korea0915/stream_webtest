@@ -74,7 +74,7 @@ st.write(size)
 
 df = pd.read_csv(f'./opendata/data/df_{year}.csv') #선택한 년도 데이터 불러오기
 
-draw_plot(df, location, size)
+# draw_plot(df, location, size)
 
 
 
@@ -85,7 +85,7 @@ tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])          #탭으로 그래프�
 data = np.random.randn(10, 1)                          #데이터 입력
  
 tab1.subheader(f"{year}년도 {location}지역 매매 현황 그래프")                    #탭 1 헤더
-tab1.line_chart(data)                                   #탭 1 그래프 출력
+draw_plot(df, location, size)                                #탭 1 그래프 출력
 
 tab2.subheader(f"{year}년도 {location}지역 매매 현황 데이터")                   #탭 2 헤더
 tab2.write(df)                                        #탭 2 데이터 출력
