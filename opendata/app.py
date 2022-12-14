@@ -4,6 +4,28 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
+from streamlit_folium import st_folium
+import folium
+from folium.plugins import MarkerCluster
+## 지도 관련
+def plot(df):
+    # 리스트를 이용해 여러 행의 데이터를 위,경도로 묶음
+    center = [37.58, 127.0]
+    m = folium.Map(location=center, tiles='openstreetmap', zoom_start=11)
+    locations = df[['lat', 'lon']].values[:len(df)].tolist()
+    for i in range(len(df)):
+        df_id = df['자치구 명'][i]
+        tr_count = df[f'{size} 거래건수'][i]
+        if tr_count < 100 :
+            df_color = 'blue'
+        elif (tr_count >= 100) & (tr_count < 200):
+            df_color = 'red'
+        else:
+            df_color = 'black'
+        folium.Circle(location=locations[i], radius=tr_count*10, color = df_color, fill=True, fill_opacity=0.5).add_to(m)
+    # 지도에 클러스터를 추가.
+    # MarkerCluster(locations).add_to(m)
+    return m
 
 ## 함수관련
 def draw_plot(df, location = '지역선택', size = '크기선택'):
@@ -24,6 +46,8 @@ def draw_plot(df, location = '지역선택', size = '크기선택'):
         # fig2 = px.bar(data, x='자치구 명', y='소형 거래금액')
         # st.plotly_chart(fig1)
         # # st.plotly_chart(fig2)
+
+        st_data = st_folium(plot(df_merge), width=700)
     elif size == '크기선택':
         # 구 선택, 크기별 확인
         data = pd.DataFrame(df.set_index('자치구 명').T.iloc[1:6,:][location])
@@ -122,6 +146,10 @@ size = st.sidebar.selectbox(                     #사이드바 선택박스 크�
 #데이터 불러오기, 가공
 
 df = pd.read_csv(f'./opendata/data/df_{year}.csv') #선택한 년도 데이터 불러오기
+
+geo = pd.read_csv('./apt/seoul_geo.csv', encoding='cp949')
+geo_df = geo[['구명', '경도', '위도']].rename(columns = {'구명' : '자치구 명','경도' : 'lon', '위도':'lat'}).set_index('자치구 명')
+df_merge = pd.merge(left=df.reset_index(), right=geo_df.reset_index(), how='inner')
 
 
 

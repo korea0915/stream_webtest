@@ -4,3 +4,6 @@ pandas
 matplotlib
 seaborn
 plotly
+pydeck
+folium
+streamlit_folium
