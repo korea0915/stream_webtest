@@ -145,18 +145,6 @@ tab2.subheader(f"{year}년도 그래프")
 tab2.write(df)                                        #탭 2 데이터 출력
 
 
-max_min(location, size)
+
 with st.expander("결론"):                                #결론 출력(최곳값, 최솟값 등등)
-    if (location == "지역선택"):
-        st.write(f"""
-                    - 지역별 최고 매매가: max값
-                    - 지역별 최소 매매가: min값
-                """)
-    else:
-        st.write(f"""
-                    * {location}
-                    - 최고 매매가: max값
-                    - 최소 매매가: min값
-                    - 최고 선호하는 사이즈:
-                    - 최고 불호하는 사이즈:
-                """)        
+    max_min(location, size)   
