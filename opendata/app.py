@@ -100,7 +100,7 @@ if location == "지역선택":
     tab1.subheader(f"{year}년도 그래프")
 else:
     tab1.subheader(f"{year}년도 {location}지역 매매 현황 그래프")                    #탭 1 헤더
-tab1.draw_plot(df, location, size)                                #탭 1 그래프 출력
+draw_plot(df, location, size)                                #탭 1 그래프 출력
 
 
 if location == "지역선택":                                    #탭 2 헤더
