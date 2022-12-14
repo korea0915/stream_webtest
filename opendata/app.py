@@ -147,7 +147,7 @@ size = st.sidebar.selectbox(                     #사이드바 선택박스 크�
 
 df = pd.read_csv(f'./opendata/data/df_{year}.csv') #선택한 년도 데이터 불러오기
 
-geo = pd.read_csv('./apt/seoul_geo.csv', encoding='cp949')
+geo = pd.read_csv('./opendata/data/seoul_geo.csv', encoding='cp949')
 geo_df = geo[['구명', '경도', '위도']].rename(columns = {'구명' : '자치구 명','경도' : 'lon', '위도':'lat'}).set_index('자치구 명')
 df_merge = pd.merge(left=df.reset_index(), right=geo_df.reset_index(), how='inner')
 
