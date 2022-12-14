@@ -121,5 +121,4 @@ with st.expander("결론"):                                #결론 출력(최곳
         - 최고 많이 팔린 크기:  max값
         - 제일 적게 팔린 크기:  min값
     """)
-    st.image("./opendata/img/exit.png")
 
