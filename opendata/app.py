@@ -122,7 +122,6 @@ size = st.sidebar.selectbox(                     #사이드바 선택박스 크�
 
 df = pd.read_csv(f'./opendata/data/df_{year}.csv') #선택한 년도 데이터 불러오기
 
-# draw_plot(df, location, size)
 
 
 
@@ -146,7 +145,7 @@ tab2.subheader(f"{year}년도 그래프")
 tab2.write(df)                                        #탭 2 데이터 출력
 
 
-
+max_min(location, size)
 with st.expander("결론"):                                #결론 출력(최곳값, 최솟값 등등)
     if (location == "지역선택"):
         st.write(f"""
