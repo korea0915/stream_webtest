@@ -3,55 +3,56 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.express as px
 
 ## 함수관련
 def draw_plot(df, location = '지역선택', size = '크기선택'):
     if (location == '지역선택') & (size == '크기선택'):
-        st.image("./opendata/img/sample.jpg")
+        st.image("./apt/sample.jpg")
     elif location == '지역선택':
         # 크기 선택, 구별 확인
         data = df[['자치구 명',f'{size} 거래건수', f'{size} 거래금액']]
-        fig = plt.figure(figsize=(20, 10))
         # 거래 건수
-        plt.subplot(2, 1, 1)
-        # plt.title(f'{size} 자치구 별 거래 건수')
-        sns.barplot(x='자치구 명', y=f'{size} 거래건수', data=data)
+        fig1 = px.bar(data, x='자치구 명', y=f'{size} 거래건수')
+        fig1.update_traces(marker={"color": "magenta",
+                                    "opacity": 0.5})
         # 거래 금액
-        plt.subplot(2, 1, 2)
-        # plt.title(f'{size} 자치구 별 거래금액(평균)')
-        sns.barplot(x='자치구 명', y=f'{size} 거래금액', data=data)
-        fig.tight_layout()
-        st.pyplot(fig)
+        fig2 = px.bar(data, x='자치구 명', y=f'{size} 거래금액')
+        st.plotly_chart(fig1, theme='streamlit')
+        st.plotly_chart(fig2, theme='streamlit')
+        # fig1 = px.bar(data, x='자치구 명', y='소형 거래건수')
+        # fig2 = px.bar(data, x='자치구 명', y='소형 거래금액')
+        # st.plotly_chart(fig1)
+        # # st.plotly_chart(fig2)
     elif size == '크기선택':
         # 구 선택, 크기별 확인
-        data = pd.DataFrame(df.set_index('자치구 명').T.iloc[1:6,:][location]).reset_index()
-        fig = plt.figure(figsize=(20, 10))
+        data = pd.DataFrame(df.set_index('자치구 명').T.iloc[1:6,:][location])
+        data = data.reset_index().rename(columns = {'index':'크기'})
         # 거래 건수
-        plt.subplot(2, 1, 1)
-        sns.barplot(x=location, y='index', data=data)
-        plt.ylabel('거래 건수')
+        fig1 = px.bar(data, x=location, y='크기')
+        fig1.update_traces(marker={"color": "magenta",
+                                  "opacity": 0.5})
         # 거래 금액
-        plt.subplot(2, 1, 2)
-        sns.barplot(x=location, y='index', data=data)
-        plt.ylabel('거래 금액')
-        st.pyplot(fig)
+        fig2 = px.bar(data, x=location, y='크기')
+        st.plotly_chart(fig1, theme='streamlit')
+        st.plotly_chart(fig2, theme='streamlit')
     else:
         # 지역, 크기 둘 다 선택
         data = df[['자치구 명',f'{size} 거래건수', f'{size} 거래금액']]
         data_loc = data[data['자치구 명'] == location]
-        fig = plt.figure(figsize=(10, 10))
         # 거래 건수
-        plt.subplot(2, 1, 1)
-        # plt.title(f'{size} 자치구 별 거래 건수')
-        sns.barplot(x='자치구 명', y=f'{size} 거래건수', data=data_loc)
+        fig1 = px.bar(data_loc, x='자치구 명', y=f'{size} 거래건수')
+        fig1.update_traces(marker={"color": "magenta",
+                                   "opacity": 0.5})
         # 거래 금액
-        plt.subplot(2, 1, 2)
-        # plt.title(f'{size} 자치구 별 거래금액(평균)')
-        sns.barplot(x='자치구 명', y=f'{size} 거래금액', data=data_loc)
-        fig.tight_layout()
-        st.pyplot(fig)
+        fig2 = px.bar(data_loc, x='자치구 명', y=f'{size} 거래금액')
+        st.plotly_chart(fig1, theme='streamlit')
+        st.plotly_chart(fig2, theme='streamlit')
 
-
+# def max_min():
+#     data = df.set_index(keys="자치구 명")
+#     df1[f"{size}"].idxmax()      ##최고 매매가
+#     df1[f"{size}"].idxmin()
 
 # 선택 옵션 데이터
 
@@ -128,6 +129,3 @@ with st.expander("결론"):                                #결론 출력(최곳
                     - 최고 선호하는 사이즈:
                     - 최고 불호하는 사이즈:
                 """)        
-
-data1 = df1[['자치구 명',f'{size} 거래건수', f'{size} 거래금액']]
-st.write(data1)
