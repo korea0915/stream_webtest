@@ -97,9 +97,9 @@ df = pd.read_csv(f'./opendata/data/df_{year}.csv') #선택한 년도 데이터 �
 tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])          #탭으로 그래프로 볼지 데이터 프레임으로 볼지 선택
 with tab1:
     if location == "지역선택":
-        subheader(f"{year}년도 그래프")
+        tab1.subheader(f"{year}년도 그래프")
     else:
-        subheader(f"{year}년도 {location}지역 매매 현황 그래프")                    #탭 1 헤더
+        tab1.subheader(f"{year}년도 {location}지역 매매 현황 그래프")                    #탭 1 헤더
     draw_plot(df, location, size)                                #탭 1 그래프 출력
 
 
