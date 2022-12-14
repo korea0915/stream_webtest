@@ -3,16 +3,15 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# 선택 옵션 데이터
 
 AI26year = [2018,2019,2020]
 AI26location = ['강동구', '송파구', '강남구', '서초구', '관악구', '동작구', '영등포구', '금천구', '구로구',
                 '강서구', '양천구', '마포구', '서대문구', '은평구', '노원구', '도봉구', '강북구', '성북구',
                 '중랑구', '동대문구', '광진구', '성동구', '용산구', '중구', '종로구']
-# 선택 옵션 데이터
 
 
-
-
+#사이드바에서 원하는 데이터 옵션 선택하기
 with st.sidebar:                    #사이드바 라디오 년도 선택
     year = st.radio(
         "원하시는 년도를 선택해 주세요",
@@ -27,9 +26,6 @@ location = st.sidebar.selectbox(             #사이드바 선택박스 지역 �
             '중랑구', '동대문구', '광진구', '성동구', '용산구', '중구', '종로구'
         )
     )
-st.write(location)
-    
-
 size = st.sidebar.selectbox(                     #사이드바 선택박스 크기 선택
     "크기 선택",
         (
@@ -38,7 +34,15 @@ size = st.sidebar.selectbox(                     #사이드바 선택박스 크�
     )
 
 
+#데이터 불러오기, 가공
+
 df = pd.read_csv(f'./opendata/data/df_{year}.csv') #선택한 년도 데이터 불러오기
+
+
+
+
+
+# 탭에서 데이터 그리기
 
 tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])          #탭으로 그래프로 볼지 데이터 프레임으로 볼지 선택
 data = np.random.randn(10, 1)                          #데이터 입력
