@@ -49,7 +49,7 @@ def draw_plot(df, location = '지역선택', size = '크기선택'):
         st.plotly_chart(fig1, theme='streamlit')
         st.plotly_chart(fig2, theme='streamlit')
 
-def max_min(location, size):
+def max_min(location, size):                                  #결론 부분의 들어갈 데이터 가공 후 출력
     data = df.drop(columns= "거래년도")
     data = data.set_index(keys="자치구 명")
     if (location == "지역선택") & (size != "크기선택"):
@@ -60,7 +60,7 @@ def max_min(location, size):
         maxc = data[f"{size} 거래건수"].idxmax()      #거래가 가장 많이 된 곳
         minc = data[f"{size} 거래건수"].idxmin()      #거래가 가장 적게 된 곳
         st.write(f"""
-                    * {year} 서울 아파트 매매 거래현황
+                    ### {year} 서울 아파트 매매 거래현황
                     - 제일 인기 있는 지역 :  {maxc}
                     - 제일 인기 없는 지역 :  {minc}
 
@@ -74,7 +74,7 @@ def max_min(location, size):
         minv = data.loc[f"{location}", "소형 거래금액":].min()  #최소 매매가
         minc = data.loc[f"{location}", :"대형 거래건수"].min()  #인기 없는 사이즈
         st.write(f"""
-                    * {year}년 {location}지역의 아파트 매매 현황
+                    ### {year}년 {location}지역의 아파트 매매 현황
                     - {location}지역의 최고 매매가 : {maxv}
                     - {location}지역의 최저 매매가 : {minv}
                     - {location}지역의 가장 인기있는 사이즈 : {maxc}
@@ -95,6 +95,7 @@ AI26location = ['강동구', '송파구', '강남구', '서초구', '관악구',
 
 
 #사이드바에서 원하는 데이터 옵션 선택하기
+
 with st.sidebar:                    #사이드바 라디오 년도 선택
     year = st.radio(
         "원하시는 년도를 선택해 주세요",
@@ -147,4 +148,4 @@ tab2.write(df)                                        #탭 2 데이터 출력
 
 
 with st.expander("결론"):                                #결론 출력(최곳값, 최솟값 등등)
-    max_min(location, size)   
+    max_min(location, size)            
