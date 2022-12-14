@@ -7,10 +7,10 @@ import seaborn as sns
 ## 함수관련
 def draw_plot(df, location = '지역선택', size = '크기선택'):
     if (location == '지역선택') & (size == '크기선택'):
-        st.write('선택좀')
+        print('선택하시오')
     elif location == '지역선택':
         # 크기 선택, 구별 확인
-        data = df[['자치구 명',f'{size} 거래건수', f'{size} 거래금액']].reset_index()
+        data = df[['자치구 명',f'{size} 거래건수', f'{size} 거래금액']]
         fig = plt.figure(figsize=(20, 10))
         # 거래 건수
         plt.subplot(2, 1, 1)
@@ -21,9 +21,8 @@ def draw_plot(df, location = '지역선택', size = '크기선택'):
         # plt.title(f'{size} 자치구 별 거래금액(평균)')
         sns.barplot(x='자치구 명', y=f'{size} 거래금액', data=data)
         fig.tight_layout()
-        
         st.pyplot(fig)
-    else:
+    elif size == '크기선택':
         # 구 선택, 크기별 확인
         data = pd.DataFrame(df.set_index('자치구 명').T.iloc[1:6,:][location]).reset_index()
         fig = plt.figure(figsize=(20, 10))
@@ -35,10 +34,22 @@ def draw_plot(df, location = '지역선택', size = '크기선택'):
         plt.subplot(2, 1, 2)
         sns.barplot(x=location, y='index', data=data)
         plt.ylabel('거래 금액')
-        fig.tight_layout()
-
         st.pyplot(fig)
-
+    else:
+        # 지역, 크기 둘 다 선택
+        data = df[['자치구 명',f'{size} 거래건수', f'{size} 거래금액']]
+        data_loc = data[data['자치구 명'] == location]
+        fig = plt.figure(figsize=(10, 10))
+        # 거래 건수
+        plt.subplot(2, 1, 1)
+        # plt.title(f'{size} 자치구 별 거래 건수')
+        sns.barplot(x='자치구 명', y=f'{size} 거래건수', data=data_loc)
+        # 거래 금액
+        plt.subplot(2, 1, 2)
+        # plt.title(f'{size} 자치구 별 거래금액(평균)')
+        sns.barplot(x='자치구 명', y=f'{size} 거래금액', data=data_loc)
+        fig.tight_layout()
+        st.pyplot(fig)
 
 # 선택 옵션 데이터
 
@@ -84,19 +95,36 @@ df = pd.read_csv(f'./opendata/data/df_{year}.csv') #선택한 년도 데이터 �
 # 탭에서 데이터 그리기
 
 tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])          #탭으로 그래프로 볼지 데이터 프레임으로 볼지 선택
- 
-tab1.subheader(f"{year}년도 {location}지역 매매 현황 그래프")                    #탭 1 헤더
+
+if location == "지역선택":
+    tab1.subheader(f"{year}년도 그래프")
+else:
+    tab1.subheader(f"{year}년도 {location}지역 매매 현황 그래프")                    #탭 1 헤더
+
+
+
 draw_plot(df, location, size)                                #탭 1 그래프 출력
 
-tab2.subheader(f"{year}년도 {location}지역 매매 현황 데이터")                   #탭 2 헤더
+if location == "지역선택":                                    #탭 2 헤더
+    tab1.subheader(f"{year}년도 그래프")
+else:
+    tab1.subheader(f"{year}년도 {location}지역 매매 현황 그래프")                     
+
+
+
 tab2.write(df)                                        #탭 2 데이터 출력
 
 with st.expander("결론"):                                #결론 출력(최곳값, 최솟값 등등)
     st.write(f"""
-                최고 매매가: max값
-                최소 매매가: min값
-        최고 많이 팔린 크기:  max값
-        제일 적게 팔린 크기:  min값
+                - 최고 매매가: max값
+                - 최소 매매가: min값
+        - 최고 많이 팔린 크기:  max값
+        - 제일 적게 팔린 크기:  min값
     """)
     st.image("./opendata/img/exit.png")
 
+# def tab_header(location, size):
+#     if (location == '지역선택') & (size == '크기선택'):
+#         a = (f"{year}년도  그래프: 지역과 크기를 선택해 주세요.")
+#     elif (location != '지역선택') & (size == '크기선택'):
+#         a = (f"{year}년도  그래프: 지역과 크기를 선택해 주세요.")
