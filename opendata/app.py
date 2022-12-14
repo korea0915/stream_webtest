@@ -129,4 +129,4 @@ with st.expander("결론"):                                #결론 출력(최곳
                     - 최고 불호하는 사이즈:
                 """)        
 
-
+st.write(data_loc)
