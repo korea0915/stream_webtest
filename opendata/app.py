@@ -51,6 +51,18 @@ def draw_plot(df, location = '지역선택', size = '크기선택'):
         fig.tight_layout()
         st.pyplot(fig)
 
+def tab_header(location, size):
+    if (location == '지역선택') & (size == '크기선택'):
+        a = (f"{year}년도  그래프: 지역과 크기를 선택해 주세요.")
+    elif (location != '지역선택') & (size == '크기선택'):
+        a = (f"{year}년도 {location}별 매매현황 그래프")
+    elif (location == '지역선택') & (size != '크기선택'):
+        a = (f"{year}년도 {size}별 매매현황 그래프")
+    else:
+        a = (f"{year}년도 {location}지역 ,{size}별 매매현황 그래프")
+    return a
+
+
 # 선택 옵션 데이터
 
 AI26year = [2018,2019,2020]
@@ -122,13 +134,3 @@ with st.expander("결론"):                                #결론 출력(최곳
     """)
     st.image("./opendata/img/exit.png")
 
-def tab_header(location, size):
-    if (location == '지역선택') & (size == '크기선택'):
-        a = (f"{year}년도  그래프: 지역과 크기를 선택해 주세요.")
-    elif (location != '지역선택') & (size == '크기선택'):
-        a = (f"{year}년도 {location}별 매매현황 그래프")
-    elif (location == '지역선택') & (size != '크기선택'):
-        a = (f"{year}년도 {size}별 매매현황 그래프")
-    else:
-        a = (f"{year}년도 {location}지역 ,{size}별 매매현황 그래프")
-    return a
