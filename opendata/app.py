@@ -129,4 +129,5 @@ with st.expander("결론"):                                #결론 출력(최곳
                     - 최고 불호하는 사이즈:
                 """)        
 
-st.write(data_loc)
+data1 = df1[['자치구 명',f'{size} 거래건수', f'{size} 거래금액']]
+st.write(data1)
