@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+df = pd.read_csv('./opendata/data/df_2018.csv', encoding = 'cp949')
 AI26year = [2018,2019,2020]
 AI26location = ['강동구', '송파구', '강남구', '서초구', '관악구', '동작구', '영등포구', '금천구', '구로구',
                 '강서구', '양천구', '마포구', '서대문구', '은평구', '노원구', '도봉구', '강북구', '성북구',
@@ -41,7 +42,7 @@ tab1.subheader("A tab with a chart")                    #탭 1 헤더
 tab1.line_chart(data)                                   #탭 1 그래프 출력
 
 tab2.subheader("A tab with the data")                   #탭 2 헤더
-tab2.write(data)                                        #탭 2 데이터 출력
+tab2.write(df)                                        #탭 2 데이터 출력
 
 with st.expander("결론"):                                #결론 출력(최곳값, 최솟값 등등)
     st.write("""
@@ -50,4 +51,3 @@ with st.expander("결론"):                                #결론 출력(최곳
         be random.
     """)
     st.image("https://static.streamlit.io/examples/dice.jpg")
-            
