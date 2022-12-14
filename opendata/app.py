@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('./opendata/data/df_2018.csv', encoding = 'cp949')
+df = pd.read_csv('./opendata/data/df_2018.csv')
 AI26year = [2018,2019,2020]
 AI26location = ['강동구', '송파구', '강남구', '서초구', '관악구', '동작구', '영등포구', '금천구', '구로구',
                 '강서구', '양천구', '마포구', '서대문구', '은평구', '노원구', '도봉구', '강북구', '성북구',
