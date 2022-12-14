@@ -60,7 +60,7 @@ def tab_header(location, size):
         a = f"{year}년도 {size}별 매매현황 그래프"
     else:
         a = f"{year}년도 {location}지역 ,{size}별 매매현황 그래프"
-    return a
+    st.write(a)
 
 
 # 선택 옵션 데이터
@@ -93,7 +93,6 @@ size = st.sidebar.selectbox(                     #사이드바 선택박스 크�
         )
     )
 tab_header(location, size)
-st.write(a)
 
 
 
