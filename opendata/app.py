@@ -117,11 +117,12 @@ tab2.write(df)                                        #탭 2 데이터 출력
 with st.expander("결론"):                                #결론 출력(최곳값, 최솟값 등등)
     if (location == "지역선택"):
         st.write(f"""
-                    - 최고 매매가: max값
-                    - 최소 매매가: min값
+                    - 지역별 최고 매매가: max값
+                    - 지역별 최소 매매가: min값
                 """)
     else:
         st.write(f"""
+                    * {location}
                     - 최고 매매가: max값
                     - 최소 매매가: min값
                     - 최고 선호하는 사이즈:
