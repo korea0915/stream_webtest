@@ -50,17 +50,17 @@ def draw_plot(df, location = '지역선택', size = '크기선택'):
         sns.barplot(x='자치구 명', y=f'{size} 거래금액', data=data_loc)
         fig.tight_layout()
         st.pyplot(fig)
-a= ""
+
 def tab_header(location, size):
     if (location == '지역선택') & (size == '크기선택'):
-        a = f"{year}년도  그래프: 지역과 크기를 선택해 주세요."
+        tab1.subheader(f"{year}년도  그래프: 지역과 크기를 선택해 주세요.")
     elif (location != '지역선택') & (size == '크기선택'):
-        a = f"{year}년도 {location}별 매매현황 그래프"
+       tab1.subheader(f"{year}년도 {location}별 매매현황 그래프")
     elif (location == '지역선택') & (size != '크기선택'):
-        a = f"{year}년도 {size}별 매매현황 그래프"
+        tab1.subheader(f"{year}년도 {size}별 매매현황 그래프")
     else:
-        a = f"{year}년도 {location}지역 ,{size}별 매매현황 그래프"
-st.write(a)
+        tab1.subheader(f"{year}년도 {location}지역 ,{size}별 매매현황 그래프")
+
 
 
 # 선택 옵션 데이터
@@ -109,10 +109,7 @@ df = pd.read_csv(f'./opendata/data/df_{year}.csv') #선택한 년도 데이터 �
 
 tab1, tab2 = st.tabs(["📈 Chart", "🗃 Data"])          #탭1으로 그래프로 볼지, 탭2로 데이터 프레임으로 볼지 선택
 with tab1:                                             #탭 1 헤더
-    if location == "지역선택":
-        tab1.subheader(f"{year}년도 그래프")
-    else:
-        tab1.subheader(f"{year}년도 {location}지역 매매 현황 그래프")                    
+    tab_header(location, size)                   
     draw_plot(df, location, size)                                #탭 1 그래프 출력
 
 
