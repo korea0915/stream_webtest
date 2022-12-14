@@ -70,9 +70,9 @@ def max_min(location, size):                                  #결론 부분의 
 
     elif (location != "지역선택") & (size == "크기선택"):
         maxv = data.loc[f"{location}", "소형 거래금액":].max()  #최고 매매가
-        maxc = data.loc[f"{location}", :"대형 거래건수"].max()  #인기 있는 사이즈
+        maxc = data.loc[f"{location}", :"대형 거래건수"].idxmax()  #인기 있는 사이즈
         minv = data.loc[f"{location}", "소형 거래금액":].min()  #최소 매매가
-        minc = data.loc[f"{location}", :"대형 거래건수"].min()  #인기 없는 사이즈
+        minc = data.loc[f"{location}", :"대형 거래건수"].idxmin()  #인기 없는 사이즈
         st.write(f"""
                     ### {year}년 {location}지역의 아파트 매매 현황
                     - {location}지역의 최고 매매가 : {maxv}원
