@@ -106,9 +106,9 @@ else:
 draw_plot(df, location, size)                                #탭 1 그래프 출력
 
 if location == "지역선택":                                    #탭 2 헤더
-    tab1.subheader(f"{year}년도 그래프")
+    tab2.subheader(f"{year}년도 그래프")
 else:
-    tab1.subheader(f"{year}년도 {location}지역 매매 현황 그래프")                     
+    tab2.subheader(f"{year}년도 {location}지역 매매 현황 그래프")                     
 
 
 
@@ -123,8 +123,8 @@ with st.expander("결론"):                                #결론 출력(최곳
     """)
     st.image("./opendata/img/exit.png")
 
-# def tab_header(location, size):
-#     if (location == '지역선택') & (size == '크기선택'):
-#         a = (f"{year}년도  그래프: 지역과 크기를 선택해 주세요.")
-#     elif (location != '지역선택') & (size == '크기선택'):
-#         a = (f"{year}년도  그래프: 지역과 크기를 선택해 주세요.")
+def tab_header(location, size):
+    if (location == '지역선택') & (size == '크기선택'):
+        a = (f"{year}년도  그래프: 지역과 크기를 선택해 주세요.")
+    elif (location != '지역선택') & (size == '크기선택'):
+        a = (f"{year}년도  그래프: 지역과 크기를 선택해 주세요.")
