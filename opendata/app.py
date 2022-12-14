@@ -50,7 +50,7 @@ def draw_plot(df, location = '지역선택', size = '크기선택'):
         sns.barplot(x='자치구 명', y=f'{size} 거래금액', data=data_loc)
         fig.tight_layout()
         st.pyplot(fig)
-
+a= ""
 def tab_header(location, size):
     if (location == '지역선택') & (size == '크기선택'):
         a = f"{year}년도  그래프: 지역과 크기를 선택해 주세요."
@@ -60,7 +60,7 @@ def tab_header(location, size):
         a = f"{year}년도 {size}별 매매현황 그래프"
     else:
         a = f"{year}년도 {location}지역 ,{size}별 매매현황 그래프"
-    st.write(a)
+st.write(a)
 
 
 # 선택 옵션 데이터
