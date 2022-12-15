@@ -27,3 +27,18 @@ st.radio(
     index = 0,
     key = "sex"
 )
+
+st.number_input(
+    label="BMI",
+    stop=0.1,
+    value = 25.0,
+    key="bmi"
+)
+
+children = st.number_input(
+    label="자녀 수",
+    step=1,
+    value=1,
+    key='children'
+)
+
