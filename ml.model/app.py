@@ -54,3 +54,6 @@ st.selectbox(
     index = 2,
     key = "region"
 )
+
+if st.button("예측"):
+    st.balloons()
