@@ -64,11 +64,9 @@ if st.button("예측"):
         state["smoker"],
         state["children"],
         state["sex"] == "남성",
-        state["region"] == "북서",
         state["region"] == "북동",
-        state["region"] == "남서",
-        state["region"] == "남동"]
-
-    ]
+        state["region"] == "북서",
+        state["region"] == "남동",
+        state["region"] == "남서"]]
     pred = model.predict(input_values)
     st.metric(label="예측값", value= pred[0])
