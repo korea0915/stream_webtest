@@ -42,3 +42,8 @@ st.number_input(
     key='children'
 )
 
+st.checkbox(
+    label = "흡연여부",
+    value=False,
+    key="smoker"
+)
