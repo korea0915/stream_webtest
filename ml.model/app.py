@@ -23,7 +23,7 @@ st.number_input(
 
 st.radio(
     label = "성별",
-    option = ["남성", "여성"],
+    options = ["남성", "여성"],
     index = 0,
     key = "sex"
 )
