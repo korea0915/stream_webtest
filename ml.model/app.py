@@ -20,3 +20,10 @@ age = st.number_input(
     value=30,
     key='age'
 )
+
+st.radio(
+    label = "성별",
+    option = ["남성", "여성"],
+    index = 0,
+    key = "sex"
+)
