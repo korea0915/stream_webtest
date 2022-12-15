@@ -30,7 +30,7 @@ st.radio(
 
 st.number_input(
     label="BMI",
-    stop=0.1,
+    step=0.1,
     value = 25.0,
     key="bmi"
 )
@@ -46,4 +46,11 @@ st.checkbox(
     label = "흡연여부",
     value=False,
     key="smoker"
+)
+
+st.selectbox(
+    label = "지역",
+    options = ["북동", "북서","남동","남서"],
+    index = 2,
+    key = "region"
 )
