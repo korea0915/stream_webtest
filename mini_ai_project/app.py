@@ -17,3 +17,5 @@ response = openai.Completion.create(
   presence_penalty=0.0,
   stop=["You:"]
 )
+
+st.write(response)
