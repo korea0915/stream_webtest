@@ -6,8 +6,8 @@ import seaborn as sns
 import os
 import openai
 
-
 openai.api_key = st.secrets["api_secret"]
+
 response = openai.Completion.create(
   model="text-davinci-003",
   prompt="Convert this text to a programmatic command:\n\nExample: Ask Constance if we need some bread\nOutput: send-msg `find constance` Do we need some bread?\n\nReach out to the ski store and figure out if I can get my skis fixed before I leave on Thursday",
