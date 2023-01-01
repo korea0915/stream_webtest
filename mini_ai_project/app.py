@@ -18,4 +18,4 @@ response = openai.Completion.create(
   stop=["You:"]
 )
 
-st.write(response)
+st.write(response.prompt)
