@@ -18,7 +18,7 @@ response = openai.Completion.create(
   stop=["You:"]
 
   
-prompt = st.text_input("You: ", "hello, how are you?", key="input")
+yinput = st.text_input("You: ", "hello, how are you?", key="input")
 
-st.write(chat_api(prompt))
+# st.write(chat_api(prompt))
 st.write(response)
