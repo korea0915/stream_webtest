@@ -4,5 +4,3 @@ pandas
 matplotlib
 seaborn
 mlxtend
-openai
-streamlit-chat==0.0.2.1
