@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import openai as ai
 
-ai.api_key = st.secrets("OPENAI_API_KEY")
+ai.api_key = st.secrets["OPENAI_API_KEY"]
 
 response = openai.Completion.create(
   model="text-davinci-003",
