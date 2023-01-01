@@ -8,7 +8,7 @@ import openai
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 def chat_api(yinput):
   response = openai.Completion.create(
-  model="text-davinci-003",
+  model="text-ada-001",
   prompt=yinput,
   temperature=0.8,
   max_tokens=60,
