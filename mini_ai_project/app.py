@@ -6,7 +6,7 @@ import seaborn as sns
 import os
 import openai
 
-openai.organization = "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"
+openai.organization = "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"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 response = openai.Completion.create(
