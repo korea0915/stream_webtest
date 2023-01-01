@@ -18,7 +18,6 @@ def chat_api(prompt):
     presence_penalty=0.0,
     stop=["You:"]
   )
-  return response.prompt
   
 prompt = st.text_input("You: ", "hello, how are you?", key="input")
 
