@@ -17,9 +17,9 @@ def chat_api(yinput):
     presence_penalty=0.0,
     stop=["You:"]
   )
-  return openai.Completion.create.choices[0].text
+  message = response.choices[0].text
+  return message
     
 yinput = st.text_input("You: ", "hello, how are you?", key="input")
 
 st.write(chat_api(yinput))
-st.write(response)
