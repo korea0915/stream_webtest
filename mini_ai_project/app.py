@@ -8,14 +8,13 @@ import openai
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 def chat_api(yinput):
   response = openai.Completion.create(
-    model="text-davinci-003",
-    prompt= yinput,
-    temperature=0.5,
-    max_tokens=60,
-    top_p=1.0,
-    frequency_penalty=0.5,
-    presence_penalty=0.0,
-    stop=["You:"]
+  model="text-davinci-003",
+  prompt=yinput,
+  max_tokens=100,
+  top_p=1,
+  frequency_penalty=0.0,
+  presence_penalty=0.0,
+  stop=["\n"]
   )
   message = response.choices[0].text
   return message
