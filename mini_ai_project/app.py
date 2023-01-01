@@ -7,7 +7,7 @@ import openai
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-def chat_api(prompt)
+def chat_api(prompt):
   response = openai.Completion.create(
     model="text-davinci-003",
     prompt="You: What have you been up to?\nFriend: Watching old movies.\nYou: Did you watch anything interesting?\nFriend:",
