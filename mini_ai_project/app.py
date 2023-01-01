@@ -6,7 +6,7 @@ import seaborn as sns
 import os
 import openai
 
-openai.api_key = "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"
+openai.api_key = os.getenv("\ai.env")
 
 response = openai.Completion.create(
   model="text-davinci-003",
