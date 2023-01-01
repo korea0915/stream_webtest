@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 import openai
-##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
-openai.api_key = "os.getenv("OPENAI_API_KEY")" 
+
+openai.api_key = "os.getenv("OPENAI_API_KEY")"
 
 response = openai.Completion.create(
   model="text-davinci-003",
