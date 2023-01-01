@@ -16,7 +16,7 @@ response = openai.Completion.create(
   frequency_penalty=0.5,
   presence_penalty=0.0,
   stop=["You:"]
-
+)
   
 yinput = st.text_input("You: ", "hello, how are you?", key="input")
 
