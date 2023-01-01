@@ -9,11 +9,11 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 response = openai.Completion.create(
   model="text-davinci-003",
-  prompt="Convert this text to a programmatic command:\n\nExample: Ask Constance if we need some bread\nOutput: send-msg `find constance` Do we need some bread?\n\nReach out to the ski store and figure out if I can get my skis fixed before I leave on Thursday",
-  temperature=0,
-  max_tokens=100,
+  prompt="You: What have you been up to?\nFriend: Watching old movies.\nYou: Did you watch anything interesting?\nFriend:",
+  temperature=0.5,
+  max_tokens=60,
   top_p=1.0,
-  frequency_penalty=0.2,
+  frequency_penalty=0.5,
   presence_penalty=0.0,
-  stop=["\n"]
+  stop=["You:"]
 )
