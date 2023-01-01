@@ -22,4 +22,3 @@ def chat_api(yinput):
 yinput = st.text_input("You: ", "hello, how are you?", key="input")
 
 st.write(chat_api(yinput))
-st.write(key)
