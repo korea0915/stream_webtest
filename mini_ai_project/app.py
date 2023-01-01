@@ -3,9 +3,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import openai as ai
+import openai
 
-ai.api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 response = openai.Completion.create(
   model="text-davinci-003",
