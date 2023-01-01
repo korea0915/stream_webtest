@@ -9,7 +9,7 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 def chat_api(yinput):
   response = openai.Completion.create(
   model="text-davinci-003",
-  prompt=prompt="Product description: A home milkshake maker\nSeed words: fast, healthy, compact.\nProduct names: HomeShaker, Fit Shaker, QuickShake, Shake Maker\n\nProduct description: A pair of shoes that can fit any foot size.\nSeed words: adaptable, fit, omni-fit."
+  prompt="Product description: A home milkshake maker\nSeed words: fast, healthy, compact.\nProduct names: HomeShaker, Fit Shaker, QuickShake, Shake Maker\n\nProduct description: A pair of shoes that can fit any foot size.\nSeed words: adaptable, fit, omni-fit."
   temperature=0,
   max_tokens=100,
   top_p=1.0,
