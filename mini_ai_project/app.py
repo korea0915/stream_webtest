@@ -24,5 +24,5 @@ yinput = st.text_input("You: ", "hello, how are you?", key="input")
 st.write(chat_api(yinput))
 
 ###코드 시작
-df = pd.read_csv("korea0915/stream_webtest/mini_ai_project/data/train.csv")
+df = pd.read_csv("/mini_ai_project/data/train.csv")
 st.wirte(df.head())
