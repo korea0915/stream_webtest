@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import openai
-
+##open chatGPT api
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 def chat_api(yinput):
   response = openai.Completion.create(
@@ -22,3 +22,7 @@ def chat_api(yinput):
 yinput = st.text_input("You: ", "hello, how are you?", key="input")
 
 st.write(chat_api(yinput))
+
+###코드 시작
+df = pd.read_parquet("/content/drive/MyDrive/data/train.parquet")
+st.wirte(df.head())
