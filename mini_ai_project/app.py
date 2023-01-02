@@ -25,4 +25,5 @@ st.write(chat_api(yinput))
 
 ###코드 시작
 df = pd.read_csv("./mini_ai_project/data/train.csv")
+st.title("제주도 시간별 교통량 예측하기")
 st.write(df.head())
