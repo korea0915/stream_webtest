@@ -25,4 +25,4 @@ st.write(chat_api(yinput))
 
 ###코드 시작
 df = pd.read_csv("./mini_ai_project/data/train.csv")
-st.wirte(df.head())
+st.write(df.head())
